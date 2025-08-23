@@ -21,22 +21,30 @@ public class Game {
       @Column(name = "game_year")
       private Integer year;
       private String genre;
-      private String platform;
+      private String platforms;
+      private Double score;
       private String imgUrl;
+
+      //Foi colocado essa ORM pq a String ela tem um limite de caracteres, essa ORM serve pra aumentar a quantidade de caracteres
+      @Column(columnDefinition = "TEXT") 
       private String shortDescription;
+      
+      @Column(columnDefinition = "TEXT")
       private String longDescription;
       
       public Game() {
     	  
       }
 
-	public Game(Long id, String title, Integer year, String genre, String platform, String imgUrl,
+	public Game(Long id, String title, Integer year, String genre, String platforms,
+			Double score, String imgUrl,
 			String shortDescription, String longDescription) {
 		this.id = id; //o id do objeto recebe o id que veio de argumento
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.platform = platform;
+		this.platforms = platforms;
+		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
@@ -77,11 +85,20 @@ public class Game {
 	}
 
 	public String getPlatform() {
-		return platform;
+		return platforms;
 	}
 
 	public void setPlatform(String platform) {
-		this.platform = platform;
+		this.platforms = platform;
+	}
+
+	
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
 	}
 
 	public String getImgUrl() {
