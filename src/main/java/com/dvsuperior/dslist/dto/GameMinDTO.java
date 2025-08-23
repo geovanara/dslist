@@ -4,7 +4,7 @@ import com.dvsuperior.dslist.entities.Game;
 
 public class GameMinDTO {
 
-	 
+	//Como eu só queria puxar do banco os cinco campos, eu criei a classe 'GameMinDTO', que faz isso
     private Long id;
     private String title;
     private Integer year;
